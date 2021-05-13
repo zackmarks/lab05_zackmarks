@@ -38,21 +38,6 @@ class psData : public regionData {
     }
 
 
-/*
-    psData(const string inN, const string inS, const int inPop):
-        state(inS), population(1) {
-    const int age;
-    const string gender;
-    const string race;
-    const string county;
-    const bool MI;
-    bool flee;
-    raceDemogData r;
-
-
-
-            //regionData(inN, "", population);
-        }*/
 
     //getters
     string getState() const { return regionName; }
@@ -67,8 +52,9 @@ class psData : public regionData {
     //overloading << operator
     friend std::ostream& operator<<(std::ostream &out, const psData &PD);
     virtual void toString(ostream& os) const{
-        cout << "a";
+        cout << this;
     }
+    
 private:
     //const string state;
     string name;

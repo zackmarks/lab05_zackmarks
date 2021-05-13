@@ -1,3 +1,6 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -34,7 +37,7 @@ int main() {
     //cout << theAnswers;
 
     theAnswers.reportTopTenStatesBP();
-    theAnswers.reportTopTenStatesPS();
+    //theAnswers.reportTopTenStatesPS();
 
 
     /*

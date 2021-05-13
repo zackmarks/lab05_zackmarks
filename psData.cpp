@@ -1,6 +1,5 @@
 //Zack Marks
 //cs32  Lab05   Prof. Wood  W21
-//fully copied over
 
 #include <sstream>
 #include "psData.h"

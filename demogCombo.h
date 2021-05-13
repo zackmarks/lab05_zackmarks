@@ -1,3 +1,6 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #ifndef COMBODEMOG_H
 #define COMBODEMOG_H
 
@@ -28,14 +31,15 @@ class demogCombo : public demogData {
 
     void addCounty(shared_ptr<demogData> c);
     int getCountyAmt() const {return countyAmt;}
+    
+    //I tried to get these to be inherited but could not
+    //getters
     virtual int getPovAmt() const {return POV;}
     virtual int getOver65() const { return OVER65;}
     virtual int getUnder18() const { return UNDER18;} 
     virtual int getUnder5() const { return UNDER5;}
     virtual int getBachAmt() const {return BACH;}
     virtual int getHSAmt() const { return HS;}
-
-
     virtual double getOver65Perc() const { return ((OVER65 * 100.0) / population);}
     virtual double getUnder18Perc() const { return ((UNDER18 * 100.0) / population);}
     virtual double getUnder5Perc() const { return ((UNDER5 * 100.0) / population);}
@@ -43,14 +47,13 @@ class demogCombo : public demogData {
     virtual double getPercWHS() const { return ((HS * 100.0) / population);}
     virtual double getPercBelowPov() const { return ((POV * 100.0) / population);}
     
-//fill in
+    //basically the <<
     virtual void toString(ostream& os) const{
         cout << this;
     }
-    //uPDATE THIS LATER
-    //help from : stackoverflow.com/questions/27350212/c-inheritance-tostring
 
-  friend std::ostream& operator<<(std::ostream &out, const demogCombo &SD);
+    //overloading <<
+    friend std::ostream& operator<<(std::ostream &out, const demogCombo &SD);
 
 private:
 	int countyAmt;
@@ -60,9 +63,5 @@ private:
 	int UNDER5;
 	int BACH;
 	int HS;
-
-	//string demogName;
-	//vector<shared_ptr<regionData>> combo;
-    //fill in
 };
 #endif

@@ -1,3 +1,6 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #ifndef POLICECOMBODATA_H
 #define POLICECOMBODATA_H
 
@@ -8,15 +11,12 @@
 #include <cassert>
 #include <string>
 #include <iostream>
-//#include <vector>
-//#include <map>
 using namespace std;
 
 class psCombo : public regionData  {
   public:
 
-    //write psCombo constructor
-    //psCombo():regionData("",""){}
+    // psCombo constructor
     psCombo(string inS) : regionData{inS, inS}{
         numMentalI = 0;
         fleeCount = 0;
@@ -29,7 +29,7 @@ class psCombo : public regionData  {
         midAge = 0;
     }
     
-    //complete these
+    //getters
     int getNumMentalI() const {return numMentalI; }
     int getFleeingCount() const {return fleeCount;}
     int getCasesOver65() const {return over65;}
@@ -38,14 +38,17 @@ class psCombo : public regionData  {
     int getnumMales() const {return male;}
     int getnumFemales()const {return female;}
     int getNumberOfCases() const {return population;}
-    string getState() const {return regionName; } 
+    //string getState() const {return regionName; } 
     int getCasesMidAge() const {return midAge;}
     string getStateName() const {return stateName;}
 
+    //child class versin of toString, which prints the psCombo data
     virtual void toString(ostream& os) const{
         cout << "a\n";
     }
 
+    //prereq: pointer to a psData object, named i. each i represents an incident of a police hooting
+    //updates the instance vars after adding a new incident
     void addIncident(shared_ptr<psData> i);
 
     friend std::ostream& operator<<(std::ostream &out, const psCombo& PD);
@@ -59,7 +62,6 @@ private:
     raceDemogData rdd;
     int male;
     int female;
-    //int cases;
     int midAge;
 };
 

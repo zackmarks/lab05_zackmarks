@@ -1,16 +1,16 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #ifndef DATAAQ_H
 #define DATAAQ_H
 
-//#include <string>
 #include <iostream>
 #include <vector>
 #include <map>
 #include "demogCombo.h"
 #include "psCombo.h"
 
-/*
-  data aggregator and query for testing
-*/
+
 class dataAQ {
   public:
     dataAQ();
@@ -31,9 +31,13 @@ class dataAQ {
     shared_ptr<demogCombo> getComboDemogData(string regionName) { return allComboDemogData[regionName]; }
     shared_ptr<psCombo> getComboPoliceData(string regionName) { return allComboPoliceData[regionName]; }
     
-   friend std::ostream& operator<<(std::ostream &out, const dataAQ &comboData);
-   void printAK();
+    //overloading <<
+    friend std::ostream& operator<<(std::ostream &out, const dataAQ &comboData);
 
+    //used for testing
+    void printAK();
+
+    //used for more testing
     void getStatesReport(){
         string state = "";
         for(map<string, shared_ptr<demogCombo>>::iterator it=allComboDemogData.begin(); it!=allComboDemogData.end() ; it++){
@@ -44,8 +48,6 @@ class dataAQ {
         }
     }
 
-
-    //this quarter restriction
     private:
         std::map<string, shared_ptr<demogCombo> > allComboDemogData;
         std::map<string, shared_ptr<psCombo> > allComboPoliceData;

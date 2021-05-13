@@ -1,6 +1,5 @@
 //Zack Marks
 //cs32  Lab05   Prof. Wood  W21
-//Should be fine
 
 #ifndef PARSE_H
 #define PARSE_H
@@ -35,19 +34,10 @@ void consumeColumnNames(std::ifstream &myFile);
 //NEW INHEREITED VERSION
 std::vector<shared_ptr<regionData>> read_csv(std::string filename, typeFlag fileType);
 
-
-
 // Read one line from a CSV file for county demographic data specifically
 shared_ptr<demogData> readCSVLineDemog(std::string theLine);
-
-//read from a CSV file (for a given data type) return a vector of the data
-//std::vector<shared_ptr<demogData>> read_csv(std::string filename, typeFlag fileType);
 
 // Read one line from a CSV file for police shooting data specifically
 shared_ptr<psData> readCSVLinePolice(std::string theLine);
 
-//read from a CSV file (for a given data type) return a vector of the data
-//std::vector<shared_ptr<psData>> read_csvPolice(std::string filename, typeFlag fileType);
-
-/*dont redefine function. combine two commented out functions*/
 #endif

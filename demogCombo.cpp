@@ -1,3 +1,6 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #include "demogCombo.h"
 #include "demogData.h"
 #include <sstream>
@@ -5,12 +8,8 @@
 #include <assert.h>
 #include <iomanip>
 
-//add member functions here
 
-/* print state data - as aggregate of all the county data */
-/*std::ostream& operator<<(std::ostream &out, const demogCombo& ComboD) {
-    return out;
-}*/
+//overloads the << operator
 std::ostream& operator<<(std::ostream &out, const demogCombo &SD) {
     out << "State Info: " << SD.getStateName() << endl;
     out << "Number of Counties: " << SD.getCountyAmt() << endl;
@@ -28,29 +27,19 @@ std::ostream& operator<<(std::ostream &out, const demogCombo &SD) {
     out << SD.getRaceDemogData() << endl;
     return out;
 }
-void demogCombo::addCounty(shared_ptr<demogData> c){
-	//if(c->getStateName() != this->getName())
-	//	return;
-	//at this point, the county is in the state. just adds the amount of each data field
 
-	countyAmt++;
-    //this->addOver65(c->getOver65());
-	/*over65 += c->getOver65();
-	under18 += c->getUnder18();
-	under5 += c->getUnder5();
-	population += c->getPop();
-	bach += c->getBachAmt();
-	hs += c->getHSAmt();
-	pov += c->getPovAmt();*/
+//Pre-req: a pointer to demogData c. c represents a county
+//updates each instance var based on c's data.
+void demogCombo::addCounty(shared_ptr<demogData> c){
     rdd += c->getRaceDemogData();
     population += c->getPop();
-
+    countyAmt++;
     POV += c->getPovAmt();
     OVER65 += c->getOver65();
     UNDER18 += c->getUnder18();
     UNDER5 += c->getUnder5();
     BACH += c->getBachAmt();
     HS += c->getHSAmt();
-    //cout << endl<< "added pov: " << c->getPovAmt() << " -- tot pov: " << pov;
-
+    //cout << c->getStateName() << ": added pov: " << c->getPovAmt() << " -- tot pov: " << pov << " -- perc: " << c->getPercBelowPov() << endl;
+    //line above for testing
 }

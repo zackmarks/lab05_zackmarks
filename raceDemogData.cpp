@@ -1,3 +1,6 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #include "raceDemogData.h"
 #include <iostream>
 #include <iomanip>

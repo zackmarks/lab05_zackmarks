@@ -1,6 +1,5 @@
 //Zack Marks
 //cs32  Lab05   Prof. Wood  W21
-//Should be fine
 
 #include "parse.h"
 #include <algorithm>

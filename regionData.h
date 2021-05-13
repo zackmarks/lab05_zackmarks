@@ -1,3 +1,6 @@
+//Zack Marks
+//cs32  Lab05   Prof. Wood  W21
+
 #ifndef REGION_H
 #define REGION_H
 
@@ -12,14 +15,15 @@ using namespace std;
 /* very general data type for any kind of regional data*/
 class regionData {
   public:
+    //t constuctors
     regionData(const string inN, const string inS, const int pop) : regionName(inN), population(pop) {
       stateS.insert(inS);
     }
-
     regionData(const string inN, const string inS) : regionName(inN), population(0) {
       stateS.insert(inS);
     }
 
+    //getters
     string getRegionName() const { return regionName; }
     string getState() const { if (stateS.size() == 1) return *(stateS.begin()); else return "many";  }
     void addState(string inS) { stateS.insert(inS);}
@@ -35,6 +39,7 @@ class regionData {
     void setPop(int inPop) { population = inPop; }
     void addPop(int inPop) {population += inPop; }
 
+    //pure virtual to show that it should always go to child class's function
     virtual void toString(ostream& os) const = 0;
 
   protected:

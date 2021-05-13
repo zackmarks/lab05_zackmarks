@@ -1,6 +1,5 @@
 //Zack Marks
 //cs32  Lab05   Prof. Wood  W21    
-//fully copied over
 
 #ifndef RACEDEMOG_H
 #define RACEDEMOG_H
@@ -55,6 +54,8 @@ class raceDemogData {
       void addOtherCount(int inNum){otherCount+= inNum;}
       void addCommunityCount(int inNum){pop+= inNum;}
 
+      //prereq: rd, an instance of radeDemogData
+      //postreq: updates this instance vars
       raceDemogData& operator+=(const raceDemogData rd) {
           addFirstNationCount(rd.getFirstNationCount());
           addAsianCount(rd.getAsianCount());

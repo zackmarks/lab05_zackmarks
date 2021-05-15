@@ -19,7 +19,7 @@
 class demogCombo : public demogData {
   public:
   	//take in only state name, use demogData const to make others 0
-    demogCombo(string stateName): demogData{stateName, stateName, 0,0,0,0,0,0,0, raceDemogData()}{
+    demogCombo(string region, string stateName): demogData{region, stateName, 0,0,0,0,0,0,0, raceDemogData()}{
     	countyAmt = 0;
     	POV = 0;
 		OVER65 = 0;

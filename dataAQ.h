@@ -48,6 +48,9 @@ class dataAQ {
         }
     }
 
+    void printAsian();
+
+
     private:
         std::map<string, shared_ptr<demogCombo> > allComboDemogData;
         std::map<string, shared_ptr<psCombo> > allComboPoliceData;

@@ -12,53 +12,82 @@
 dataAQ::dataAQ() {}
 
 //for later
-string makeKeyExample(shared_ptr<demogData> theData) {
-  string theKey = "Key";
+string makeKeyExample(shared_ptr<demogData> theData){
+	string theKey = "Key";
+	if(theData->getPercBelowPov() < 10)
+		theKey += "BelowPovLessTenPer";
+	else if(theData->getPercBelowPov() < 20)
+		theKey += "BelowPovLessTwentyPer";
+	else if(theData->getPercBelowPov() < 30)
+		theKey += "BelowPovLessThirtyPer";
+	else
+		theKey += "BelowPovAboveThirtyPer";
 
-/*
-  if (theData->getBelowPoverty() < 10) {
-    theKey += "BelowPovLessTenPer";
-  } else if (theData->getBelowPoverty() < 20) {
-    theKey += "BelowPovLessTwentyPer";
-  } else if (theData->getBelowPoverty() < 30) {
-    theKey += "BelowPovLessThirtyPer";
-  } else {
-    theKey += "BelowPovAboveThirtyPer";
-  }
-*/
-  return theKey;
+	return theKey;
 }
 
 //for later
 string makeKeyExample(shared_ptr<psData> theData) {
+	string theKey = "Key";
 
-  string theKey = "Key";
-  /*
-  if (theData->getFleeing() == "Foot") {
-    theKey += "FleeingOnFoot";
-  } else if (theData->getFleeing() == "Car") {
-    theKey += "FleeingByCar";
-  } else if (theData->getFleeing() == "Other") {
-    theKey += "FleeingOtherMeans";
-  } else {
-    theKey += "NotFleeing";
-  }
-  */
+	if(theData->getRace() == "W")
+		theKey += "WhiteVictim";
+	else if(theData->getRace() == "A")
+		theKey += "AsianVictim";
+	else if(theData->getRace() == "H")
+		theKey += "HispanicVictim";
+	else if(theData->getRace() == "N")
+		theKey += "NativeAmericanVictim";
+	else if(theData->getRace() == "B")
+		theKey += "AfricanAmericanVictim";
+	else if(theData->getRace() == "O")
+		theKey += "OtherRaceVictim";
+	else
+		theKey += "RaceUnspecifiedVictim";
   return theKey;
 }
 
 //for later
 //swtich to a function parameter
 void dataAQ::createComboDemogDataKey(std::vector<shared_ptr<demogData> >& theData) {
-//fill in
+	string key = "";
+	for (auto county : theData){
+		key = makeKeyExample(county);
+		if(allComboDemogData.count(key) == 0){
+			demogCombo newKey(key, county->getStateName());
+			auto keyPtr = make_shared<demogCombo>(newKey);
+			allComboDemogData[key] = keyPtr;
+		}
+		allComboDemogData[key]->addCounty(county);
+		allComboDemogData[key]->addState(county->getState());
+	}
+	//cout << "\nDemogSize: "<<allComboDemogData.size() << endl;
+
+	/*for (auto combo : allComboDemogData){
+		cout << *(combo).second << endl;
+	}*/
 }
 
 //for later
 void dataAQ::createComboPoliceDataKey(std::vector<shared_ptr<psData> >& theData) {
 //fill in
+	string key = "";
+	for(auto inci : theData){
+		key = makeKeyExample(inci);
+		if(allComboPoliceData.count(key) == 0){
+			psCombo newKey(key, inci->getState());
+			auto keyPtr = make_shared<psCombo>(newKey);
+			allComboPoliceData[key] = keyPtr;
+		}
+		allComboPoliceData[key]->addIncident(inci);
+		allComboPoliceData[key]->addState(inci->getState());
+	}
+	//cout << "\nPSSize: "<<allComboPoliceData.size() << endl;
+	/*for (auto group : allComboPoliceData){
+		cout << *(group).second << endl << endl;
+	}*/
 
 }
-
 
 
 void dataAQ::createComboDemogData(std::vector<shared_ptr<demogData> >&  theData) {
@@ -69,7 +98,7 @@ void dataAQ::createComboDemogData(std::vector<shared_ptr<demogData> >&  theData)
     for(auto county : theData){
         stateOfCounty = county->getStateName();
         if(allComboDemogData.count(stateOfCounty) == 0){
-            demogCombo newState(stateOfCounty);
+            demogCombo newState(stateOfCounty, stateOfCounty);
             auto statePtr = make_shared<demogCombo>(newState);
             allComboDemogData[stateOfCounty] = statePtr;
         }
@@ -85,7 +114,7 @@ void dataAQ::createComboPoliceData(std::vector<shared_ptr<psData> >& theData) {
     for(auto incident : theData){
         stateOfIncident = incident->getState();
         if(allComboPoliceData.count(stateOfIncident) == 0){
-            psCombo newState(stateOfIncident);
+            psCombo newState(stateOfIncident, stateOfIncident);
             auto statePtr = make_shared<psCombo>(newState);
             allComboPoliceData[stateOfIncident] = statePtr;
         }
@@ -178,4 +207,10 @@ std::ostream& operator<<(std::ostream &out, const dataAQ &theAnswers) {
 void dataAQ::printAK(){
     cout <<endl<< *(allComboDemogData["AK"]);
     cout <<endl<< *(allComboPoliceData["AK"]);
+}
+
+//test function
+void dataAQ::printAsian(){
+    cout << endl << *(allComboDemogData["KeyAsianVictim"]);
+    cout << endl << *(allComboPoliceData["KeyAsianVictim"]);
 }

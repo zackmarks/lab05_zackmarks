@@ -25,7 +25,13 @@ class regionData {
 
     //getters
     string getRegionName() const { return regionName; }
-    string getState() const { if (stateS.size() == 1) return *(stateS.begin()); else return "many";  }
+    string getState() const {
+        if (stateS.size() == 1){
+            return *(stateS.begin()); 
+        }else{
+            return printState();
+        }
+    }
     void addState(string inS) { stateS.insert(inS);}
     string printState() const { 
       string s;

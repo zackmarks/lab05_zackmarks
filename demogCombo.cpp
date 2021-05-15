@@ -11,7 +11,8 @@
 
 //overloads the << operator
 std::ostream& operator<<(std::ostream &out, const demogCombo &SD) {
-    out << "State Info: " << SD.getStateName() << endl;
+    out << "Combo Demographic Info: key: " << SD.getRegionName() << endl;
+    out << "Combo Info: " << SD.getState() << endl;
     out << "Number of Counties: " << SD.getCountyAmt() << endl;
     out << "Population info:\n";
     out << std::setprecision(2) << std::fixed;
@@ -23,7 +24,7 @@ std::ostream& operator<<(std::ostream &out, const demogCombo &SD) {
     out << "(high school or more): " <<SD.getPercWHS() << "\% and total: " << SD.getHSAmt() << endl;
     out << "persons below poverty: " <<SD.getPercBelowPov() << "\% and total: " << SD.getPovAmt() << endl;
     out << "Total population: " << SD.getPop() << endl;
-    out << "community racial demographics: Racial Demographics Info:\n";
+    out << "Racial Demographics Info:\n";
     out << SD.getRaceDemogData() << endl;
     return out;
 }

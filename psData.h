@@ -35,6 +35,7 @@ class psData : public regionData {
                 flee = false;
             else
                 flee = true;
+            fleeing = inFlee;
     }
 
 
@@ -48,6 +49,7 @@ class psData : public regionData {
     bool getMI() const {return MI;}
     bool getFlee() const {return flee;}
     string getCounty() const {return county;}
+    string getFleeing() const {return fleeing;}
 
     //overloading << operator
     friend std::ostream& operator<<(std::ostream &out, const psData &PD);
@@ -65,6 +67,7 @@ private:
     bool MI;
     bool flee;
     raceDemogData r;
+    string fleeing;
 };
 
 #endif

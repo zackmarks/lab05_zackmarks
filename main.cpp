@@ -29,14 +29,15 @@ int main() {
         //std::cout << *((shared_ptr<demogData>&)theDemogData);
     }*/
 
-    theAnswers.createComboDemogData((std::vector<shared_ptr<demogData>>&)theDemogData);
-    theAnswers.createComboPoliceData((std::vector<shared_ptr<psData>>&) thePoliceData);
+    theAnswers.createComboDemogDataKey((std::vector<shared_ptr<demogData>>&)theDemogData);
+    theAnswers.createComboPoliceDataKey((std::vector<shared_ptr<psData>>&) thePoliceData);
     //cout << theAnswers << endl;
     //theAnswers.printAK();
     //theAnswers.getStatesReport();
     //cout << theAnswers;
+    //theAnswers.printAsian();
 
-    theAnswers.reportTopTenStatesBP();
+    //theAnswers.reportTopTenStatesBP();
     //theAnswers.reportTopTenStatesPS();
 
 

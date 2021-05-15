@@ -17,7 +17,7 @@ class psCombo : public regionData  {
   public:
 
     // psCombo constructor
-    psCombo(string inS) : regionData{inS, inS}{
+    psCombo(string key, string inS) : regionData{key, inS}{
         numMentalI = 0;
         fleeCount = 0;
         over65 = 0;
@@ -42,9 +42,19 @@ class psCombo : public regionData  {
     int getCasesMidAge() const {return midAge;}
     string getStateName() const {return stateName;}
 
+
+    double getMentalIPerc() const {return numMentalI * 100.0 / population; }
+    double getFleeingPerc() const {return fleeCount * 100.0 / population;}
+    double getOver65Perc() const {return over65 * 100.0 / population;}
+    double getUnder18Perc() const {return under18 * 100.0 / population;}
+    //double getMalesPerc() const {return male * 1.0 / population;}
+    //double getFemalesPerc()const {return female * 1.0 / population;}
+    double getMidAgePerc() const {return midAge * 100.0 / population;}
+
+
     //child class versin of toString, which prints the psCombo data
     virtual void toString(ostream& os) const{
-        cout << "a\n";
+        cout << this;
     }
 
     //prereq: pointer to a psData object, named i. each i represents an incident of a police hooting

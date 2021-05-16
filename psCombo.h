@@ -47,8 +47,6 @@ class psCombo : public regionData  {
     double getFleeingPerc() const {return fleeCount * 100.0 / population;}
     double getOver65Perc() const {return over65 * 100.0 / population;}
     double getUnder18Perc() const {return under18 * 100.0 / population;}
-    //double getMalesPerc() const {return male * 1.0 / population;}
-    //double getFemalesPerc()const {return female * 1.0 / population;}
     double getMidAgePerc() const {return midAge * 100.0 / population;}
 
 

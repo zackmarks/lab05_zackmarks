@@ -8,7 +8,7 @@
 /* print state data - as aggregate of all incidents in this state */
 std::ostream& operator<<(std::ostream &out, const psCombo& PD) {
     //out << "key: " << PD.getRegionName();
-    out << "\nState Info: " << PD.printState();
+    out << "State Info: " << PD.printState();
     out << "\nNumber of incidents: " << PD.getNumberOfCases();
     out << std::setprecision(2) << std::fixed;
     out << "\nIncidents with age \n(over 65): " << PD.getCasesOver65() << " %: " << PD.getOver65Perc();
@@ -21,6 +21,7 @@ std::ostream& operator<<(std::ostream &out, const psCombo& PD) {
     return out;
 }
 /*
+Submission 1:
 Expected:
 State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\n 
 Actual:
@@ -28,7 +29,25 @@ key: KeyNativeAmericanVictim\nState Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND
 After changes:
 State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states\n
 
+
+
+Submission 3:
+
+Test Failed: 
+'Testing aggregate police shooting data\nPASSED: subReport1\nPASSED: subReport2' != 
+'Testing aggregate police shooting data\n   FAILED: subReport1\n     
+Expected: 
+State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\n 
+Actual: 
+\nState Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\nPASSED: subReport2'
+Fixed:
+State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\nPASSED: subReport2'
+
 */
+
+
+
+
 
 //prereq: inci, a pointer to a psData object. represents an individual shooting
 //postreq: updates instance vars to include the new shooting

@@ -24,7 +24,7 @@ std::ostream& operator<<(std::ostream &out, const demogCombo &SD) {
     out << "(high school or more): " <<SD.getPercWHS() << "\% and total: " << SD.getHSAmt() << endl;
     out << "persons below poverty: " <<SD.getPercBelowPov() << "\% and total: " << SD.getPovAmt() << endl;
     out << "Total population: " << SD.getPop() << endl;
-    out << "Racial Demographics Info:\n";
+    //out << "Racial Demographics Info:\n";
     out << SD.getRaceDemogData() << endl;
     return out;
 }

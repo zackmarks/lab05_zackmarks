@@ -31,11 +31,9 @@ int main() {
 
     theAnswers.createComboDemogDataKey((std::vector<shared_ptr<demogData>>&)theDemogData);
     theAnswers.createComboPoliceDataKey((std::vector<shared_ptr<psData>>&) thePoliceData);
-    //cout << theAnswers << endl;
+
     //theAnswers.printAK();
-    //theAnswers.getStatesReport();
     //cout << theAnswers;
-    //theAnswers.printAsian();
 
     //theAnswers.reportTopTenStatesBP();
     //theAnswers.reportTopTenStatesPS();

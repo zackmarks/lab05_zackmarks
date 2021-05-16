@@ -18,9 +18,11 @@ class regionData {
     //t constuctors
     regionData(const string inN, const string inS, const int pop) : regionName(inN), population(pop) {
       stateS.insert(inS);
+      stateAmt = 1;
     }
     regionData(const string inN, const string inS) : regionName(inN), population(0) {
       stateS.insert(inS);
+      stateAmt = 1;
     }
 
     //getters
@@ -37,7 +39,7 @@ class regionData {
       string s;
       for (std::set<string>::iterator it=stateS.begin(); it != stateS.end(); it++) 
         s+=*it+", "; 
-      s+= "total states: " + std::to_string(stateS.size());
+      s+= "total states: " + to_string(stateS.size());
       return s;
     }
     void setName(string inN) {regionName = inN;}
@@ -53,6 +55,7 @@ class regionData {
     //region data could be more than one state
     std::set<string> stateS; //all regions should have identifying state in US
   	int population; //region population
+    int stateAmt;
   	
 };
 #endif

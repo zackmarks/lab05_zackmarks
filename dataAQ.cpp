@@ -84,7 +84,7 @@ void dataAQ::createComboPoliceDataKey(std::vector<shared_ptr<psData> >& theData)
 	}
 	//cout << "\nPSSize: "<<allComboPoliceData.size() << endl;
 	for (auto group : allComboPoliceData){
-		cout << *(group).second << endl << endl;
+		//cout << *(group).second << endl << endl;
 	}
 
 }

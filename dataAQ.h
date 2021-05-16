@@ -52,8 +52,8 @@ class dataAQ {
 
 
     private:
-        std::map<string, shared_ptr<demogCombo> > allComboDemogData;
-        std::map<string, shared_ptr<psCombo> > allComboPoliceData;
+        std::map<string, shared_ptr<demogCombo>> allComboDemogData;
+        std::map<string, shared_ptr<psCombo>> allComboPoliceData;
 
 };
 #endif

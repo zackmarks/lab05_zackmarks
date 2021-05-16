@@ -224,13 +224,16 @@ Test Failed: 'Testing aggregate demographic data\nPASSED: subReport1\nPASSED: su
 
 FAILED: subReport1\n     
 Expected: 
-Combo Info: AK, AL, AR, CA, CO, CT, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SD, TN, TX, UT, VA, VT, WA, WI, WY, total states: 46\nNumber of Counties: 431 County Demographics Info: comboData, many\n 
+Combo Info: AK, AL, AR, CA, CO, CT, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, 
+NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SD, TN, TX, UT, VA, VT, WA, WI, WY, total states: 46\nNumber of Counties: 431 
+County Demographics Info: comboData, many\n 
 Actual: 
 Combo Demographic Info: key: KeyBelowPovLessTenPer\nCombo Info: AK, AL, AR, CA, CO, CT, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SD, TN, TX, UT, VA, VT, WA, WI, WY, total states: 46\nNumber of Count\n   
 
 FAILED: subReport2\n     
 Expected: 
-Education info: \n(Bachelor or more): 38.30% and total: 19714949\n(high school or more): 91.51% and total: 47106146\npersons below poverty: 7.55% and total: 3885127\nTotal population: 51476603\n
+Education info: \n(Bachelor or more): 38.30% and total: 19714949\n
+(high school or more): 91.51% and total: 47106146\npersons below poverty: 7.55% and total: 3885127\nTotal population: 51476603\n
 Actual: 
 Education info:\n(Bachelor or more): 38.31% and total: 19707335\n(high school or more): 91.51% and total: 47073510\npersons below poverty: 7.55% and total: 3881503\nTotal population: 51440355\nR\n
 

@@ -41,6 +41,7 @@ void demogCombo::addCounty(shared_ptr<demogData> c){
     UNDER5 += c->getUnder5();
     BACH += c->getBachAmt();
     HS += c->getHSAmt();
+    povAmt += c->getPovAmt();
     //cout << c->getStateName() << ": added pov: " << c->getPovAmt() << " -- tot pov: " << pov << " -- perc: " << c->getPercBelowPov() << endl;
     //line above for testing
 }

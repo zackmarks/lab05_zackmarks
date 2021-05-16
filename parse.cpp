@@ -80,7 +80,7 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine){
     int medHouseIncome = stoi(getField(ss)); //dont use
     //skip per capita
     getField(ss);
-    double belowPoverty = stod(getField(ss));
+    double belowPoverty = stod(getField(ss))/100.0;
     //cout << belowPoverty << endl;
 
     //skip over some data 
@@ -92,7 +92,7 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine){
     raceDemogData r(FirstNation, Asian, Black, Latinx, HIPacificIsle, MultiRace, White, WhiteNH, totalPop2014);
 
     return make_shared<demogData>(name, state, popOver65, popUnder18,
-            popUnder5, bach, hs, belowPoverty, totalPop2014, r);
+            popUnder5, bach, hs, round(belowPoverty * totalPop2014), totalPop2014, r);
 }
 
 //read one line of police data

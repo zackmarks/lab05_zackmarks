@@ -20,7 +20,7 @@ class demogData : public regionData {
 
     //constructor
     demogData(string inN, string inS, double in65, double in18,
-        double in5, double inBach, double inHS, double inPov, int totPop14, raceDemogData r): 
+        double in5, double inBach, double inHS, int inPov, int totPop14, raceDemogData r): 
         regionData{inN, inS, totPop14}{
             //a whole lot of instance vars here because data downstream must be able to read in multiple types of data
             //regionName = inN;
@@ -30,14 +30,19 @@ class demogData : public regionData {
             percUnder5 = in5;
             percWBach = inBach;
             percWHS = inHS;
-            percBelowPov = inPov;
+            percBelowPov = inPov * 100.0 / totPop14;
+
+            //double getBelowPoverty() const  { return 100.0f*((double)(belowPoverty))/population; }
+
+
             rdd = r;
             over65 = getOver65();
             under18 = getUnder18();
             under5 = getUnder5();
             bach = getBachAmt();
             hs = getHSAmt();
-            pov = getPovAmt();
+
+            povAmt = inPov;
         }
 
     //getter functions. self explanatory
@@ -48,7 +53,7 @@ class demogData : public regionData {
     double getUnder5Perc() const { return percUnder5;}
     double getPercWBach() const { return percWBach;}
     double getPercWHS() const { return percWHS;}
-    double getPercBelowPov() const { return percBelowPov;}
+    double getPercBelowPov() const { return 100.0f * ((double)povAmt)/population;}
     raceDemogData getRaceDemogData() const {return rdd;}
 
     //getters that do calcs. self explanatory
@@ -57,7 +62,7 @@ class demogData : public regionData {
     virtual int getUnder5() const { return /*under5;}/*/round(population * percUnder5/100);}
     virtual int getBachAmt() const {return /*bach;}/*/round(population * percWBach/100);}
     virtual int getHSAmt() const { return /*hs;}/*/round(population * percWHS/100);}
-    virtual int getPovAmt() const { return /*pov;}/*/round(population * percBelowPov/100);}
+    virtual int getPovAmt() const { return povAmt;}//*/round(population * percBelowPov/100);}
 
     /*void addOver65(int in) {over65 += in;}
     void addUnder18(int in) {under18 += in;}
@@ -88,7 +93,7 @@ protected:
     int under5;
     int bach;
     int hs;
-    int pov;
+    int povAmt;
 
     raceDemogData rdd;
 };

@@ -34,7 +34,7 @@ class demogCombo : public demogData {
     
     //I tried to get these to be inherited but could not
     //getters
-    virtual int getPovAmt() const {return POV;}
+    //virtual int getPovAmt() const {return POV;}
     virtual int getOver65() const { return OVER65;}
     virtual int getUnder18() const { return UNDER18;} 
     virtual int getUnder5() const { return UNDER5;}
@@ -45,7 +45,7 @@ class demogCombo : public demogData {
     virtual double getUnder5Perc() const { return ((UNDER5 * 100.0) / population);}
     virtual double getPercWBach() const { return ((BACH * 100.0) / population);}
     virtual double getPercWHS() const { return ((HS * 100.0) / population);}
-    virtual double getPercBelowPov() const { return ((POV * 100.0) / population);}
+    //virtual double getPercBelowPov() const { return ((POV * 100.0) / population);}
     
     //basically the <<
     virtual void toString(ostream& os) const{

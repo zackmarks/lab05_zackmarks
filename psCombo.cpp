@@ -20,34 +20,6 @@ std::ostream& operator<<(std::ostream &out, const psCombo& PD) {
     out << "\nRacial demographics of state incidents: " << PD.getRacialData();
     return out;
 }
-/*
-Submission 1:
-Expected:
-State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\n 
-Actual:
-key: KeyNativeAmericanVictim\nState Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states\n
-After changes:
-State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states\n
-
-
-
-Submission 3:
-
-Test Failed: 
-'Testing aggregate police shooting data\nPASSED: subReport1\nPASSED: subReport2' != 
-'Testing aggregate police shooting data\n   FAILED: subReport1\n     
-Expected: 
-State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\n 
-Actual: 
-\nState Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\nPASSED: subReport2'
-Fixed:
-State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\nPASSED: subReport2'
-
-*/
-
-
-
-
 
 //prereq: inci, a pointer to a psData object. represents an individual shooting
 //postreq: updates instance vars to include the new shooting
@@ -88,3 +60,17 @@ void psCombo::addIncident(shared_ptr<psData> inci){
 	rdd.addCommunityCount(1);
 }
 
+/*
+Submission 3:
+
+Test Failed: 
+'Testing aggregate police shooting data\nPASSED: subReport1\nPASSED: subReport2' != 
+'Testing aggregate police shooting data\n   FAILED: subReport1\n     
+Expected: 
+State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\n 
+Actual: 
+\nState Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\nPASSED: subReport2'
+Fixed:
+State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\nPASSED: subReport2'
+
+*/

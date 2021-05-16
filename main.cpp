@@ -38,30 +38,6 @@ int main() {
     //theAnswers.reportTopTenStatesBP();
     //theAnswers.reportTopTenStatesPS();
 
-
-    /*
-
-    cout << "*** the state that needs the most pre-schools**" << endl;
-    string needPK = theAnswers.youngestPop();
-    cout << *(theAnswers.getStateData(needPK)) << endl;
-    cout << "*** the state that needs the most high schools**" << endl;
-    string needHS = theAnswers.teenPop();
-    cout << *(theAnswers.getStateData(needHS)) << endl;
-    cout << "*** the state that needs the most vaccines**" << endl;
-    string needV = theAnswers.wisePop();
-    cout << *(theAnswers.getStateData(needV)) << endl;
-
-    cout << "*** the state that needs the most help with education**" << endl;
-    string noHS = theAnswers.underServeHS();
-    cout << *(theAnswers.getStateData(noHS)) << endl;
-    cout << "*** the state with most college grads**" << endl;
-    string grads = theAnswers.collegeGrads();
-    cout << *(theAnswers.getStateData(grads)) << endl;
-
-    cout << "*** the state with most population below the poverty line**" << endl;
-    string belowPov = theAnswers.belowPoverty();
-    cout << *(theAnswers.getStateData(belowPov)) << endl;
-    */
     return 0;
 }
 

@@ -1,6 +1,5 @@
 //Zack Marks
 //cs32  Lab05   Prof. Wood  W21
-//fully copied over
 
 #ifndef POLICE_H
 #define POLICE_H
@@ -20,11 +19,10 @@ using namespace std;
 
 class psData : public regionData {
   public:
-    //change later. error coming from here
-    //add appropriate function paramaters to constructor once you add data
+
+    //constuctor
     psData(string inN, string inS, int inA, string inG, string inR, string inC, bool inMI, string inFlee) : 
         regionData{inS, inS, 1}{
-        //name(inN), state(inS), age(inA), gender(inG), race(inR), county(inC), MI(inMI) {
             name = inN;
             age = inA; 
             gender = inG;
@@ -37,8 +35,6 @@ class psData : public regionData {
                 flee = true;
             fleeing = inFlee;
     }
-
-
 
     //getters
     string getState() const { return regionName; }

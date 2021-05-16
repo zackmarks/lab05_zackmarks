@@ -61,11 +61,9 @@ void dataAQ::createComboDemogDataKey(std::vector<shared_ptr<demogData> >& theDat
 		allComboDemogData[key]->addCounty(county);
 		allComboDemogData[key]->addState(county->getState());
 	}
-	//cout << "\nDemogSize: "<<allComboDemogData.size() << endl;
-
-	for (auto combo : allComboDemogData){
-		//cout << *(combo).second << endl;
-	}
+	/*for (auto combo : allComboDemogData){
+		cout << *(combo).second << endl;
+	}*/
 }
 
 //for later
@@ -82,10 +80,9 @@ void dataAQ::createComboPoliceDataKey(std::vector<shared_ptr<psData> >& theData)
 		allComboPoliceData[key]->addIncident(inci);
 		allComboPoliceData[key]->addState(inci->getState());
 	}
-	//cout << "\nPSSize: "<<allComboPoliceData.size() << endl;
-	for (auto group : allComboPoliceData){
-		//cout << *(group).second << endl << endl;
-	}
+	/*for (auto group : allComboPoliceData){
+		cout << *(group).second << endl << endl;
+	}*/
 
 }
 
@@ -171,7 +168,7 @@ void dataAQ::reportTopTenStatesBP() {
 
     //sort using predicate
     sort(stateVec.begin(), stateVec.end(), comparePovRates);
-    //print
+    //print info
     cout << "Top ten states sorted on Below Poverty data & the associated police shooting data:\n";
     for(int i = 0 ; i < 10 ; i++){
         cout << stateVec[i]->getName();
@@ -187,14 +184,13 @@ void dataAQ::reportTopTenStatesBP() {
     }
 }
 
-/* print all combo data */
+//print all combo data
 std::ostream& operator<<(std::ostream &out, const dataAQ &theAnswers) {
   out << "Combo Demographic Info: ";
   for (auto const& entry : theAnswers.allComboDemogData) {
       out << "key: " << entry.first << endl;
       out << *(entry.second) << "\n";
   }
-
   for (auto const& entry : theAnswers.allComboPoliceData) {
       out << "key: " << entry.first << endl;
       out << *(entry.second) << "\n";
@@ -202,48 +198,8 @@ std::ostream& operator<<(std::ostream &out, const dataAQ &theAnswers) {
   return out;
 }
 
-
 //test function that only prints alaska's data
 void dataAQ::printAK(){
     cout <<endl<< *(allComboDemogData["AK"]);
     cout <<endl<< *(allComboPoliceData["AK"]);
 }
-
-//test function
-void dataAQ::printAsian(){
-    cout << endl << *(allComboDemogData["KeyAsianVictim"]);
-    cout << endl << *(allComboPoliceData["KeyAsianVictim"]);
-}
-
-
-
-/*
-
-testAgDemog (0.0/20.0)
-Test Failed: 'Testing aggregate demographic data\nPASSED: subReport1\nPASSED: subReport2\nPASSED: subReport3' != 'Testing aggregate demographic data\n   
-
-FAILED: subReport1\n     
-Expected: 
-Combo Info: AK, AL, AR, CA, CO, CT, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, 
-NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SD, TN, TX, UT, VA, VT, WA, WI, WY, total states: 46\nNumber of Counties: 431 
-County Demographics Info: comboData, many\n 
-Actual: 
-Combo Demographic Info: key: KeyBelowPovLessTenPer\nCombo Info: AK, AL, AR, CA, CO, CT, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SD, TN, TX, UT, VA, VT, WA, WI, WY, total states: 46\nNumber of Count\n   
-
-FAILED: subReport2\n     
-Expected: 
-Education info: \n(Bachelor or more): 38.30% and total: 19714949\n
-(high school or more): 91.51% and total: 47106146\npersons below poverty: 7.55% and total: 3885127\nTotal population: 51476603\n
-Actual: 
-Education info:\n(Bachelor or more): 38.31% and total: 19707335\n(high school or more): 91.51% and total: 47073510\npersons below poverty: 7.55% and total: 3881503\nTotal population: 51440355\nR\n
-
-FAILED: subReport3\n     
-Expected: 
-Racial Demographics Info: \n% American Indian and Alaska Native percent: 0.69 count: 353361\n% Asian American percent: 7.28 count: 3746319\n% Black/African American percent: 8.98 count: 4621551\n% Hispanic or Latinx percent: 10.58 count: 5443920\n% Native Hawaiian and Other Pacific Islander percent: 0.32 count: 163485\n% Two or More Races percent: 2.63 count: 1355686\n% White (inclusive) percent: 80.12 count: 41241222\n% White (nonHispanic) percent: 71.08 count: 36587127\ntotal Racial Demographic Count: 51476603
-Actual: 
-Racial Demographics Info: \n% American Indian and Alaska Native percent: 0.69 count: 353205\n% Asian American percent: 7.28 count: 3745693\n% Black/African American percent: 8.98 count: 4621171\n% Hispanic or Latinx percent: 10.58 count: 5442607\n% Native Hawaiian and Other Pacific Islander percent: 0.32 count: 163474\n% Two or More Races percent: 2.63 count: 1355340\n% White (inclusive) percent: 80.11 count: 41206530\n% White (nonHispanic) percent: 71.06 count: 36553573\ntotal Racial D'
-
-
-
-
-*/

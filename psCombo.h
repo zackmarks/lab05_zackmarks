@@ -38,11 +38,8 @@ class psCombo : public regionData  {
     int getnumMales() const {return male;}
     int getnumFemales()const {return female;}
     int getNumberOfCases() const {return population;}
-    //string getState() const {return regionName; } 
     int getCasesMidAge() const {return midAge;}
     string getStateName() const {return stateName;}
-
-
     double getMentalIPerc() const {return numMentalI * 100.0 / population; }
     double getFleeingPerc() const {return fleeCount * 100.0 / population;}
     double getOver65Perc() const {return over65 * 100.0 / population;}

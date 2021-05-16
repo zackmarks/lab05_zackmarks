@@ -41,15 +41,11 @@ class dataAQ {
     void getStatesReport(){
         string state = "";
         for(map<string, shared_ptr<demogCombo>>::iterator it=allComboDemogData.begin(); it!=allComboDemogData.end() ; it++){
-
             state = it->first;
             cout << *(it->second);
             cout << *(allComboPoliceData[state]) << "\n\n";
         }
     }
-
-    void printAsian();
-
 
     private:
         std::map<string, shared_ptr<demogCombo>> allComboDemogData;

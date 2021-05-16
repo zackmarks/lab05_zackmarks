@@ -15,14 +15,12 @@ using namespace std;
 /* very general data type for any kind of regional data*/
 class regionData {
   public:
-    //t constuctors
+    //2 constuctors
     regionData(const string inN, const string inS, const int pop) : regionName(inN), population(pop) {
-      stateS.insert(inS);
-      //stateAmt = 1;
+        stateS.insert(inS);
     }
     regionData(const string inN, const string inS) : regionName(inN), population(0) {
-      stateS.insert(inS);
-      //stateAmt = 1;
+        stateS.insert(inS);
     }
 
     //getters
@@ -52,10 +50,8 @@ class regionData {
 
   protected:
   	string regionName; //city or county or place name
-    //region data could be more than one state
     std::set<string> stateS; //all regions should have identifying state in US
   	int population; //region population
-    //int stateAmt;
   	
 };
 #endif

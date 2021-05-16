@@ -31,13 +31,6 @@ class demogData : public regionData {
             bach = inBach;
             hs = inHS;
             povAmt = inPov;
-
-            /*percOver65 = in65;
-            percUnder18 = in18;
-            percUnder5 = in5;
-            percWBach = inBach;
-            percWHS = inHS;
-            percBelowPov = inPov * 100.0 / totPop14;*/
         }
 
     //getter functions. self explanatory
@@ -52,12 +45,12 @@ class demogData : public regionData {
     raceDemogData getRaceDemogData() const {return rdd;}
 
     //getters that do calcs. self explanatory
-    virtual int getOver65() const { return over65;}//round(population * percOver65/100);}
-    virtual int getUnder18() const { return under18;}//round(population * percUnder18/100);} 
-    virtual int getUnder5() const { return under5;}//round(population * percUnder5/100);}
-    virtual int getBachAmt() const {return bach;}//round(population * percWBach/100);}
-    virtual int getHSAmt() const { return hs;}//round(population * percWHS/100);}
-    virtual int getPovAmt() const { return povAmt;}//round(population * percBelowPov/100);}
+    int getOver65() const { return over65;}
+    int getUnder18() const { return under18;} 
+    int getUnder5() const { return under5;}
+    int getBachAmt() const {return bach;}
+    int getHSAmt() const { return hs;}
+    int getPovAmt() const { return povAmt;}
 
     
     //overloading the << operator
@@ -71,12 +64,6 @@ class demogData : public regionData {
 
 protected:
     string state;
-    /*double percOver65;
-    double percUnder18;
-    double percUnder5;
-    double percWBach;
-    double percWHS;
-    double percBelowPov;*/
     int over65;
     int under18;
     int under5;

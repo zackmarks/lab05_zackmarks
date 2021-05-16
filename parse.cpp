@@ -53,11 +53,11 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine){
     string name = getField(ss);
     string state = getField(ss);
     //turn into mathematical percent
-    double popOver65 = stod(getField(ss));
-    double popUnder18 = stod(getField(ss));
-    double popUnder5 = stod(getField(ss));
-    double bach = stod(getField(ss));
-    double hs = stod(getField(ss));
+    double popOver65 = stod(getField(ss))/100.0;
+    double popUnder18 = stod(getField(ss))/100.0;
+    double popUnder5 = stod(getField(ss))/100.0;
+    double bach = stod(getField(ss))/100.0;
+    double hs = stod(getField(ss))/100.0;
 
     //now skip over some data
     for (int i=0; i < 4; i++)
@@ -91,8 +91,9 @@ shared_ptr<demogData> readCSVLineDemog(std::string theLine){
  
     raceDemogData r(FirstNation, Asian, Black, Latinx, HIPacificIsle, MultiRace, White, WhiteNH, totalPop2014);
 
-    return make_shared<demogData>(name, state, popOver65, popUnder18,
-            popUnder5, bach, hs, round(belowPoverty * totalPop2014), totalPop2014, r);
+    return make_shared<demogData>(name, state, round(popOver65*totalPop2014), round(popUnder18*totalPop2014),
+            round(popUnder5*totalPop2014), round(bach*totalPop2014), round(hs*totalPop2014), 
+            round(belowPoverty*totalPop2014), totalPop2014, r);
 }
 
 //read one line of police data

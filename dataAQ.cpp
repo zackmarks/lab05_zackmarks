@@ -64,7 +64,7 @@ void dataAQ::createComboDemogDataKey(std::vector<shared_ptr<demogData> >& theDat
 	//cout << "\nDemogSize: "<<allComboDemogData.size() << endl;
 
 	for (auto combo : allComboDemogData){
-		//cout << *(combo).second << endl;
+		cout << *(combo).second << endl;
 	}
 }
 
@@ -84,7 +84,7 @@ void dataAQ::createComboPoliceDataKey(std::vector<shared_ptr<psData> >& theData)
 	}
 	//cout << "\nPSSize: "<<allComboPoliceData.size() << endl;
 	for (auto group : allComboPoliceData){
-		//cout << *(group).second << endl << endl;
+		cout << *(group).second << endl << endl;
 	}
 
 }

@@ -14,11 +14,11 @@ dataAQ::dataAQ() {}
 //for later
 string makeKeyExample(shared_ptr<demogData> theData){
 	string theKey = "Key";
-	if(theData->getPercBelowPov() < 10)
+	if(theData->getPercBelowPov() < 10.0)
 		theKey += "BelowPovLessTenPer";
-	else if(theData->getPercBelowPov() < 20)
+	else if(theData->getPercBelowPov() < 20.0)
 		theKey += "BelowPovLessTwentyPer";
-	else if(theData->getPercBelowPov() < 30)
+	else if(theData->getPercBelowPov() < 30.0)
 		theKey += "BelowPovLessThirtyPer";
 	else
 		theKey += "BelowPovAboveThirtyPer";
@@ -63,9 +63,9 @@ void dataAQ::createComboDemogDataKey(std::vector<shared_ptr<demogData> >& theDat
 	}
 	//cout << "\nDemogSize: "<<allComboDemogData.size() << endl;
 
-	/*for (auto combo : allComboDemogData){
-		cout << *(combo).second << endl;
-	}*/
+	for (auto combo : allComboDemogData){
+		//cout << *(combo).second << endl;
+	}
 }
 
 //for later
@@ -241,16 +241,6 @@ Actual:
 Racial Demographics Info: \n% American Indian and Alaska Native percent: 0.69 count: 353205\n% Asian American percent: 7.28 count: 3745693\n% Black/African American percent: 8.98 count: 4621171\n% Hispanic or Latinx percent: 10.58 count: 5442607\n% Native Hawaiian and Other Pacific Islander percent: 0.32 count: 163474\n% Two or More Races percent: 2.63 count: 1355340\n% White (inclusive) percent: 80.11 count: 41206530\n% White (nonHispanic) percent: 71.06 count: 36553573\ntotal Racial D'
 
 
-
-testAgPS (0.0/20.0)
-Test Failed: 'Testing aggregate police shooting data\nPASSED: subReport1\nPASSED: subReport2' != 'Testing aggregate police shooting data\n
-
-FAILED: subReport1\n    
-Expected:
-State Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states: 22\nNumber of incidents: 87\n 
-Actual:
-key: KeyNativeAmericanVictim\nState Info: AK, AZ, CA, CO, ID, KS, KY, MN, MT, ND, NE, NM, NV, OK, SD, TX, UT, VA, VT, WA, WI, WY, total states\n
-PASSED: subReport2'
 
 
 */
